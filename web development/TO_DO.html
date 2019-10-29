@@ -1,0 +1,192 @@
+<html>
+
+<head>
+	<title>TO DO APP</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: rgba(50, 255, 150, 0.2);
+			width: 100%;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			padding: 10px 0px 10px 20px;
+			border-top: 3px solid #0f0;
+			margin: auto;
+			background-color: rgba(215, 255, 234);
+			/* margin-top: 50px;
+		 */
+			margin-bottom: -3px;
+			/* margin-top: 45px; */
+			z-index: 10;
+		}
+
+		footer input {
+			height: 50px;
+			width: 90%;
+			padding: 2%;
+			font-size: 20px;
+			/* overflow: auto; */
+
+		}
+
+		footer button {
+			background-color: #4CAF50;
+			/* Green */
+			border-radius: 40px;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			width: 7%;
+		}
+
+		main {
+			width: 80%;
+			margin: auto;
+			margin-top: 3px;
+		}
+
+		.heading {
+			background: #4CAF50;
+			/* Green */
+			padding: 20px;
+			border-radius: 50px;
+		}
+
+		ul li {
+			text-transform: uppercase;
+			display: block;
+			min-height: 30px;
+			background: #eee;
+			margin-bottom: 5px;
+			overflow: auto;
+
+		}
+
+		ul .complete {
+			background: #4CAF50;
+			/* Green */
+
+
+		}
+		ul li span {
+			margin: 5px 0px 0px 20px;
+			display: inline-block;
+			text-decoration: none;
+
+		}
+
+		ul li div {
+			float: right;
+		}
+
+	</style>
+
+	<script>
+		function addItem() {
+			const todoItem = document.getElementById('todoItem');
+			const todo = todoItem.value;
+			if (todo.length == 0) {
+				alert("Please enter your todo item");
+			} else {
+				todoTemplate(todo);
+			}
+		}
+
+		function todoTemplate(todo) {
+			const li = document.createElement('li');
+			const span = document.createElement('span');
+			span.innerText = todo
+			li.insertAdjacentElement('afterbegin', span);
+
+			const list = document.getElementById('list');
+			list.insertAdjacentElement('beforeend', li);
+
+			//Adding button into div
+			const div = document.createElement('div');
+			const doneButton = document.createElement('button');
+
+			/*Styling Done Button*/
+			doneButton.style.marginRight = '30px'
+			doneButton.style.backgroundColor = "rgba(215, 255, 234)"
+			doneButton.style.borderRadius = "40px"
+			doneButton.style.color = "#4CAF50"
+			doneButton.style.padding = "5px 10px"
+			doneButton.style.textAlign = "center"
+			doneButton.style.margin = "5px"
+			doneButton.style.fontWeight = "bold"
+
+
+			doneButton.innerText = "Done";
+			doneButton.addEventListener('click', doneFunc)
+			// alert(todo)
+
+			const deleteButton = document.createElement('button');
+			deleteButton.innerText = "Delete";
+
+			/*Styling Done Button*/
+			deleteButton.style.marginRight = '30px'
+			deleteButton.style.backgroundColor = " rgba(215, 255, 234)"
+			deleteButton.style.borderRadius = "40px"
+			deleteButton.style.color = "#4CAF50"
+			deleteButton.style.padding = "5px 10px"
+			deleteButton.style.textAlign = "center"
+			deleteButton.style.margin = "5px"
+			deleteButton.style.fontWeight = "bold"
+
+
+			deleteButton.addEventListener('click', deleteFunc)
+
+
+			div.insertAdjacentElement('afterbegin', doneButton);
+
+			div.insertAdjacentElement('beforeend', deleteButton);
+
+			//adding div into the list
+			li.insertAdjacentElement('beforeend', div);
+
+		}
+
+		const deleteFunc = function () {
+			console.log('test delete function');
+			const li = this.parentElement.parentElement;
+			li.remove();
+
+		}
+
+		const doneFunc = function () {
+
+			const li = this.parentElement.parentElement;
+			li.classList.add("complete");
+			li.getElementsByTagName('span')[0].style= "text-decoration:line-through";
+			// let str = document.getElementsByName('div').value;
+			// let cross = str.strike();
+			// document.getElementsByName('div') = cross;
+		}
+	</script>
+</head>
+
+<body>
+	<main>
+		<h1 align="center" class="heading">My Todo App</h1>
+		<ol id="list">
+
+		</ol>
+	</main>
+	<footer>
+		<div>
+			<input type="text" id="todoItem" placeholder=" Enter a todo item...."/>
+			<button onclick="addItem()"> Add </button>
+		</div>
+	</footer>
+</body>
+
+</html>

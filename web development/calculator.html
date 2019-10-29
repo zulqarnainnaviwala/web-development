@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Calculator
+    </title>
+
+    <script>
+        let firstoperand;
+        let secondoperand;
+        let operation;
+
+//
+   function valClick(value){
+            let spanID =  document.getElementById("inputId");
+            spanID.innerHTML = spanID.innerHTML + value;
+        }
+
+    function operator(op){
+            let spanID = document.getElementById('inputId');
+            firstoperand = parseInt(spanID.innerHTML);
+            spanID.innerHTML  = spanID.innerHTML+op;
+            operation= op;
+    }
+
+    function performCalculation(){
+        let spanID = document.getElementById('inputId');
+        secondoperand = spanID.innerHTML ;
+        secondoperand = parseInt(secondoperand.substr(secondoperand.indexOf(operation)+1));
+        console.log(secondoperand);
+        if(operation === '+'){
+            
+            spanID.innerHTML = firstoperand + secondoperand ;
+        }
+        else if(operation === '-'){
+            
+            spanID.innerHTML = firstoperand - secondoperand ;
+        }
+        else if(operation === '*'){
+            
+            spanID.innerHTML = firstoperand * secondoperand ;
+        }
+        else if(operation === '/'){
+            
+            spanID.innerHTML = firstoperand / secondoperand ;
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <span id="inputId"></span>
+<br>
+    <button onclick="valClick(1)">1</button>&puncsp;&puncsp;
+    <button onclick="valClick(2)">2</button>&puncsp;&puncsp;
+    <button onclick="valClick(3)">3</button>
+<br>
+    <button onclick="valClick(4)">4</button>&puncsp;&puncsp;
+    <button onclick="valClick(5)">5</button>&puncsp;&puncsp;
+    <button onclick="valClick(6)">6</button>
+<br>
+    <button onclick="valClick(7)">7</button>&puncsp;&puncsp;
+    <button onclick="valClick(8)">8</button>&puncsp;&puncsp;
+    <button onclick="valClick(9)">9</button>
+<br>
+    <button onclick="operator('+')">+</button>&puncsp;&puncsp;
+    <button onclick="valClick(0)">0</button>&puncsp;&puncsp;
+    <button onclick="operator('-')">-</button>
+<br>
+    <button onclick="operator('*')">*</button>&puncsp;&puncsp;
+    <button onclick="operator('/')">/</button>&puncsp;&puncsp;
+    <button onclick="performCalculation('=')">=</button>
+</body>
+</html>
