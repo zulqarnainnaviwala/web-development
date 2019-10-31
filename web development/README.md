@@ -1,2 +1,2 @@
-# learn-javascript
-This repo contains the all the examples which I taught in the class
+
+This repo contains the all the examples I have been learn in class.
