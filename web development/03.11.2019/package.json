@@ -1,0 +1,13 @@
+{
+  "name": "03.11.2019",
+  "version": "1.0.0",
+  "description": "learning call-back function in nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  
+  "author": "",
+  "license": "ISC"
+}
