@@ -1,0 +1,17 @@
+.rectangle {
+    width: 60%;
+    height: 100px;
+    background-color:rgba(155,155,155,0.50);
+    text-align: center;
+    float:right
+}
+
+div > span {
+    color: darkblue;
+    background-color: aqua;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    display: inline-flex;
+    float: left;
+}
