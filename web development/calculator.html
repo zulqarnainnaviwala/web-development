@@ -4,32 +4,27 @@
     
     <title>Calculator
     </title>
-
     <script>
         let firstoperand;
         let secondoperand;
         let operation;
-
-//
    function valClick(value){
             let spanID =  document.getElementById("inputId");
             spanID.innerHTML = spanID.innerHTML + value;
         }
-
     function operator(op){
             let spanID = document.getElementById('inputId');
             firstoperand = parseInt(spanID.innerHTML);
             spanID.innerHTML  = spanID.innerHTML+op;
             operation= op;
     }
-
     function performCalculation(){
         let spanID = document.getElementById('inputId');
         secondoperand = spanID.innerHTML ;
         secondoperand = parseInt(secondoperand.substr(secondoperand.indexOf(operation)+1));
         console.log(secondoperand);
         if(operation === '+'){
-            
+
             spanID.innerHTML = firstoperand + secondoperand ;
         }
         else if(operation === '-'){
@@ -67,8 +62,8 @@
     <button onclick="valClick(0)">0</button>&puncsp;&puncsp;
     <button onclick="operator('-')">-</button>
 <br>
-    <button onclick="operator('*')">*</button>&puncsp;&puncsp;
-    <button onclick="operator('/')">/</button>&puncsp;&puncsp;
+    <button onclick="operator('*')"> *</button>&puncsp;&puncsp;
+    <button onclick="operator('/')"> /</button>&puncsp;&puncsp;
     <button onclick="performCalculation('=')">=</button>
 </body>
 </html>
