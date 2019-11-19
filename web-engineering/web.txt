@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p></p>
+	</body>
+</html>
+
+<h1-6></h1-6>,  <hr/>,  <br/>,  <img src="" alt="" />,  <a href=""></a>,  <em></em>,  <strong></strong>,  <code></code>,
+<ul></ul>,  <ol></ol>,  <li></li>,  <div></div>,  <span></span>,  <button></button>
+
+<div style="margin: 10px; padding: 10px; border: 10px solid; float:right; width:20%; height:40px; background:green;">Demo</div>
+
+styling : width,height,background-color,text-align,color,font-size,font-weight,font-weight,font-style,display,
+position: fixed;
+	  bottom: 0,right: 0,top:1,left:1
+position: relative;
+  	  top : 20px;left : 30px;
+ 
+.(class)
+#(id)
+
+
+//FORM
+Name: <input type="text" id="name"/>
+Maths:<input type="checkbox" name="favSub" value="Maths"/> &nbsp; 
+
+<input type="button" value="Submit">
+<select id="chooseClass"><option value=" "></option></select>
+
+//EXTERNAL JS
+<script src="name.js" type="text/javascript"></script>
+//EXTERNAL CSS
+<link href="./style.css" rel="stylesheet"></link>
+
+textContent or innnerHTML
+
+An element with position: relative; is positioned relative to its normal position.
+Setting the top, right, bottom, and left properties of a relatively-positioned 
+element will cause it to be adjusted away from its normal position. Other 
+content will not be adjusted to fit into any gap left by the element.
+
+An element with position: fixed; is positioned relative to the viewport, which 
+means it always stays in the same place even if the page is scrolled. The top,
+right, bottom, and left properties are used to position the element.
+
+An element with position: absolute; is positioned relative to the nearest positioned
+ancestor (instead of positioned relative to the viewport, like fixed).
+However; if an absolute positioned element has no positioned ancestors, it uses
+the document body, and moves along with page scrolling.
+
+important,inline,parent-id,id,parent-class,class
+
+
+var result = ",after push"
+return result.substr(1); //taking string from first index -> output("after push")
+
+//array 
+push,pop,shit,unshift
+var firstCharacter = name[0];  ,var lastCharacter = name[name.length - 1];
+var sampleText = 'I am "zulqarnain" and I am studing' ;
+var sampleText = "I am 'zulqarnain' and I am studing" ;
+var sampleText = 'I am \'zulqarnain\' and I am studing' ;
+var sampleText = "I am \"zulqarnain\" and I am studing" ;
+
+var name = "asad is teaching javascript.";
+name
+console.log("-- Editing value of string using indexes");
+name[0] = 'A';
+console.log(name);
+
+//FOR
+for(let i=0 ; i<=iteration ; i++) {
+	//statements		  }
+//IF, IF_ELSE
+if(condition){  }
+if else(condition) {  }
+//TERNARY OPERATOR
+number = 2;
+number == 2 ? 'pass' : 'fail'; 
+//SWITCH
+    switch (NUM) {
+        case 0:
+            console.log('ZERO');
+            break;
+        default:
+            console.log('unknown temperature');
+            break;
+    }
+//FUNCTION
+function addition(num1 ) {
+    return function(num2) {
+         return num1 + num2;
+		 }
+ 	}
+var getDouble = (num) => {
+	return num * num;
+}
+console.log(getDouble(6));
+//OBJECT
+const myFirstObj = {
+    name : 'Asad',
+    hobby:{ 
+        1: 'Web Engineering'
+    }
+};
+myFirstObj.name
+myFirstObj.hobby[1]
+
+ES6
+//Concatenation using template literal
+const print = ` ${name} is a ${occ} and he is ${age} years old`;
+console.log(print)
+//DESTRUCTURING
+let nameArr = ["Ali", "Najeeb", "Saad", "Ahmed", "Adarsh", "Fahad"];
+	let name1 = nameArr[0];
+	let name2 = nameArr[1];
+	let [name3, name4] = nameArr;
+	console.log(name1,name2);	
+	console.log(name3, name4);
+
+
+<!-- comment -->
+&nbsp; (fixed space or hard space, NBSP (non-breaking space))
+
+
+
+//selectors
+//todo
+//web

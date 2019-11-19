@@ -1,11 +1,6 @@
 function log(content) {
-    
     var textDiv = document.getElementById("text-container");
-    // textDiv.textContent = content;
-    textDiv.innerText = content;  //same as above 
-    // textDiv.innerHTML= `<i>o</i>`
-   
-}
+    textDiv.textContent = content;}
 
 function getData(arr) {
      var result = "";
