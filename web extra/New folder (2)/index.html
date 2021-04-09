@@ -1,0 +1,219 @@
+<html>
+<head>
+    <title>PSD</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+input {
+  margin-bottom:10px;
+}
+textarea {
+  height:100px;
+  margin-bottom:10px;
+}
+input:first-of-type
+{
+  margin-top:35px;
+}
+input, textarea {
+  font-size: 1em;
+  padding: 15px 10px 10px;
+  font-family: 'Source Sans Pro',arial,sans-serif;
+  border: 1px solid #cecece;
+  border-radius: 25px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 600px;
+}
+
+button {
+  margin-top:19px;
+  margin-bottom:8px;
+  padding: 8px 22px;
+  cursor: pointer;
+  width:15%;
+  border-radius: 15px;
+  
+}
+
+label.error {
+    font-family:'Source Sans Pro',arial,sans-serif;
+    font-size:1em;
+    display:block;
+    padding-top:10px;
+    padding-bottom:10px;
+    width: 60%;
+    margin:auto;
+    border-radius:6px;
+}
+
+@media (max-width: 700px) {
+  label.error {
+    width: 90%;
+  }
+  input, textarea {
+    width: 90%;
+  }
+  button {
+    width:40%;
+  }
+   
+}
+.message {
+    font-family:'Source Sans Pro',arial,sans-serif;
+    font-size:1.1em;
+    display:none;
+    padding-top:10px;
+    padding-bottom:10px;
+    width: 80%;
+    margin:auto;
+    border-radius:6px;
+}
+.details {
+	background: #328bd0;
+
+}
+.supp {
+	background: #333333; 	
+}
+.headbg {
+	background-color: #f44e50;
+	padding-left: 20%;
+	border-bottom-style: 110%;
+}
+.head1bg {
+	background-color: #313234;
+	padding-left: 20%;
+}
+.head2bg {
+	background-color: #474359;
+	padding-left: 20%;
+}
+.bgg {
+	background-color: #326695;
+	padding-left: 20%;
+}
+</style>
+<body>
+<br>
+<br>
+ 				<div class="container">
+ 				<div class="row">
+                    <div class="col-md-4">
+                    <div class="headbg">
+                    <img src="images/phone1.png">
+                    </div>
+                    <h1><font color="#ff4a4a">Chatbot</font></h1>
+            		<p>Payboard is designed to give you<br>the atmosphere you deserve.The<br>same look and feel of your de-</p>
+                    </div>
+                   
+
+                    <div class="col-md-4">
+                    <div class="head1bg">
+                    <img src="images/phone2.png">
+                    </div>
+					<h1><font color="#313234">Banking</font></h1>
+					<p>Payboard is designed to give you<br>the atmosphere you deserve.The<br>same look and feel of your de-</p>
+                    </div>
+                    
+
+                    <div class="col-md-4">
+                    <div class="head2bg">
+                    <img src="images/phone3.png">
+                    </div>
+                    <h1><font color="#474359">PayBoard</font></h1>
+					<p>Payboard is designed to give you<br>the atmosphere you deserve.The<br>same look and feel of your de-</p>
+                    </div>
+                
+                </div>
+                </div>
+ <br><br><br>
+
+   <div class="container">
+   				<div class="row">
+   				<div class="col-md-6">
+    			<h1>PayBoard</h1>
+   				<br>
+  				
+  				<p>Gateway to your transactional needs at your fingertips <br> Payboard is designede to give you the atmosphere<br>you deserve.The same look and feel of your default<br>keyboard with a twist!<br>Press the payment button at any time to Enter the<br>transaction mode</p>
+            </div>
+            <div class="col-md-6">
+            <img src="images/phone3.png">
+            </div>
+ </div>
+ </div>
+ 
+
+<br><br><br>
+	<div class="details">
+	<h3 style="font-size: 40px;"><font color="white"><center>Details</center></font></h3>
+	<br>
+
+	    <div class="container">
+	        <div class="row">
+				<div class="col-md-6">
+					<br><br><br>
+						<p style="font-size: 25px;"><font color="white">Security Design</font></p>
+						<p style="font-size: 15px;"><font color="white">Lorem ipsum is simply dummy text of<br> the printing and typesetting industry.<br>Lorem ipsum has been the industy's<br>Standard dummy text ever since the <br> 1500s, When an unknown Printer<br>look a gallery of type and scrambled <br> it to make a type specimen book.It<br> has survived not only five Centuries</p></font>
+						</div>
+
+							<div class="col-md-6">
+							
+							<img src="images/phone3.png">
+							
+							</div>
+</div>
+</div>
+</div>
+
+
+<div class="supp">
+<div class="container">
+<h3 style="font-size: 40px;"><font color="#c30e31"><center>Support</center></font></h3>
+<h3 style="font-size: 15px;""><font color="white"><center>For more info and Support,contact Us</center></font></h3>
+</div>
+
+
+
+<div>
+	
+<form id="contact">
+  <div class="container">
+	<div class="row">
+<div class="col-md-6">
+    <div class="head">
+      
+    </div>
+    <input type="text" name="name" placeholder="Your Name" /><br />
+    <input  type="email" name="email" placeholder="Email" /><br />
+    <textarea type="text" name="message" placeholder="Your Message"></textarea><br />
+    <div class="message">Message Sent</div>
+    <button id="submit" type="submit">
+      SEND
+    </button>
+  </div>
+</form>
+
+<div class="col-md-6">
+<br><br>
+<img src="images/location.png">
+<p style="font-size: 15px;"><font color="white">Suite 412,4th Floor,<br>
+Business Arcade,Shahra-e-faisal</font></p>
+
+<br>
+<img src="images/fax.png">
+<p style="font-size: 15px;"><font color="white">CONTACT@CEESOLUTIONS.COM</font></p>
+
+<br>
+<img src="images/phone.png">
+<p style="font-size: 15px;"><font color="white">+92 21 34320769</font></p>
+</div>
+</div>
+
+</body>
+</html>

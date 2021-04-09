@@ -1,0 +1,733 @@
+<style>
+@font-face {
+    font-family: 'SegoeUI-Bold';
+    src: url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),  url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Bold.woff') format('woff'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Bold.ttf')  format('truetype'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Bold.svg#SegoeUI-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI-Light';
+    src: url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),  url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Light.woff') format('woff'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Light.ttf')  format('truetype'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),  url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI.woff') format('woff'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI.ttf')  format('truetype'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI-SemiBold';
+    src: url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-SemiBold.eot?#iefix') format('embedded-opentype'),  url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-SemiBold.woff') format('woff'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-SemiBold.ttf')  format('truetype'), url('https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/fonts/SegoeUI-SemiBold.svg#SegoeUI-SemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Variables
+$primary-color: #515f67;
+$secondary-color: #4bcaff;
+$header-bg-color: rgba(53, 63, 70, 0.85);
+$footer-bg-color: #353f47;
+$header-padding: 65px;
+$base-font-size: 14;
+$page-width: 1170;
+
+// convert "px" to "em" size unit
+@function em($pixels, $context: $base-font-size) {
+    @return #{$pixels/$context}em;
+}
+
+/**
+ * Base/General
+ **/
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SegoeUI', serif;
+    font-size: #{$base-font-size}px;
+    font-weight: normal;
+    color: #fff;
+    background: #515f68 url("https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/images/header-bg.jpg") top center no-repeat;
+    background-blend-mode: luminosity;
+}
+
+@mixin clearfix() {
+    display: table;
+    clear: both;
+    overflow: visible;
+}
+
+.container {
+    width: 100%;
+
+    &::after {
+        content: "";
+        @include clearfix();
+    }
+}
+
+.wrapper {
+    width: #{$page-width}px;
+    margin: 0 auto;
+
+    &::after {
+        content: "";
+        @include clearfix();
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        outline: none;
+    }
+
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "SegoeUI-Bold", serif;
+    font-size: 1em;
+    color: #353f46;
+    text-transform: uppercase;
+    border: 2px solid #353f46;
+    padding: 16px 38px;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+        color: $secondary-color;
+        border-color: $secondary-color;
+    }
+
+    &.button-submit {
+        color: #fff;
+        background-color: $secondary-color;
+        border-color: $secondary-color;
+        min-width: percentage(370/$page-width);
+
+        &:hover {
+            background-color: #353f46;
+            color: $secondary-color;
+        }
+    }
+
+    &.button-social {
+        width: 64px;
+        height: 64px;
+        border-color: #fff;
+        padding: 18px;
+        vertical-align: bottom;
+
+        .icon {
+            width: 28px;
+            height: 22px;
+        }
+
+        .googleplus-icon {
+            height: 29px;
+        }
+
+        .dribbble-icon {
+            width: 26px;
+            height: 27px;
+        }
+
+        .coffee-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SegoeUI-Light', serif;
+    font-size: em(30);
+    color: $primary-color;
+    text-transform: uppercase;
+
+    &::after {
+        content: "";
+        display: block;
+        margin-top: 8px;
+        width: 45px;
+        height: 2px;
+        background: $primary-color;
+    }
+}
+
+h2 {
+    font-family: "SegoeUI-SemiBold", serif;
+    font-size: em(24);
+
+    &::after {
+        display: none;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.cropped {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px 1px 1px 1px);
+    top: -9999px;
+    left: -9999px;
+}
+
+.navigation {
+    .nav-menu {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin-left: 20px;
+
+        a {
+            display: block;
+            position: relative;
+            padding: 11px 18px;
+            font-family: 'SegoeUI-Bold', serif;
+            font-size: em($base-font-size);
+            color: #fff;
+            text-transform: uppercase;
+            transition: color 0.3s;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid $secondary-color;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+        }
+
+        &:hover a, &.current a {
+            color: $secondary-color;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.clearfix::after {
+    content: "";
+    @include clearfix();
+}
+
+form {
+    font-family: "SegoeUI-SemiBold", serif;
+    font-size: em(14);
+
+    input[type=text],
+    input[type=email],
+    textarea,
+    label {
+        font-family: "SegoeUI-Light", serif;
+        font-size: em(14);
+        background: transparent;
+        display: block;
+        color: #fff;
+    }
+
+    input[type=text],
+    input[type=email],
+    textarea {
+        border: 2px solid #fff;
+        padding: 18px 20px;
+        font-size: em(18);
+        width: 100%;
+        margin-bottom: 38px;
+        resize: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    label {
+        font-family: "SegoeUI-Bold", serif;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .top-section::after {
+        content: "";
+        @include clearfix();
+    }
+
+    fieldset:first-child {
+        width: percentage(470/$page-width);
+        float: left;
+    }
+
+    .contact-info {
+        width: percentage(570/$page-width);
+        float: right;
+    }
+}
+
+/**
+ * Header
+ **/
+
+.page-header {
+    height: 150px;
+    background: $header-bg-color;
+
+    .site-logo {
+        font-family: 'SegoeUI-Bold', serif;
+        color: #fff;
+        text-transform: uppercase;
+        padding-top: $header-padding;
+        float: left;
+
+        span {
+            color: $secondary-color;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .main-navigation {
+        padding-top: $header-padding;
+        float: right;
+    }
+}
+
+/**
+ * Sections
+ **/
+
+.section {
+    position: relative;
+    padding: 80px 0;
+    background: $primary-color;
+
+    .section-title {
+        margin-bottom: 30px;
+        color: #fff;
+
+        &::after {
+            background-color: #fff;
+        }
+    }
+
+    .section-content {
+        p {
+            font-size: 1em;
+            line-height: em(24);
+            margin-bottom: 30px;
+        }
+
+        &::before, &::after {
+            content: "";
+            @include clearfix();
+        }
+    }
+
+    .section-wrapper {
+        float: left;
+        width: percentage(500/$page-width);
+        margin-right: 70px;
+    }
+
+    .embed-container {
+        float: right;
+        width: percentage(570/$page-width);
+    }
+}
+
+#home {
+    height: 650px;
+    background: transparent;
+
+    .headlines {
+        font-family: "SegoeUI-Light", serif;
+        font-size: em(42);
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 170px;
+
+        span {
+            display: inline-block;
+            background: $header-bg-color;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+
+            &:first-child:before {
+                content: "\201D";
+            }
+
+            &:last-child:after {
+                content: "\201C";
+            }
+        }
+    }
+}
+
+#services {
+    background-color: $secondary-color;
+
+    .section-title {
+        color: #fff;
+
+        &::after {
+            background-color: #fff;
+        }
+    }
+
+    .service {
+        float: left;
+        width: percentage( 270 / $page-width );
+        min-height: 180px;
+        margin-right: 30px;
+
+        .service-title {
+            margin-bottom: 18px;
+            color: #FFFFFF;
+        }
+
+        .service-desc {
+            font-family: "SegoeUI-SemiBold", serif;
+            font-size: em(12);
+            line-height: 18px;
+        }
+
+        &:last-child {
+            margin-right: auto;
+        }
+        
+        &:hover::before {
+            margin-left: 40%;
+        }
+
+        &::before {
+            transition: margin 0.5s;
+            content: "";
+            display: block;
+            height: 48px;
+            width: 48px;
+            margin-bottom: 24px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAAwCAYAAABexZu4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUEyQzQ4QUI0OTk4MTFFNUIzRDM4REMyMTlCMzQyNzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUEyQzQ4QUE0OTk4MTFFNUIzRDM4REMyMTlCMzQyNzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmRpZDpEMEM2MEUyMjhDNDlFNTExQTlBQTgwNTk0MTE3N0NFOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMEM2MEUyMjhDNDlFNTExQTlBQTgwNTk0MTE3N0NFOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ph4fBuoAABHgSURBVHja7J0JmBTF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') top left no-repeat;
+        }
+
+        &.service-coffee::before {
+            width: 34px;
+            background-position: 0 0;
+        }
+
+        &.service-instant::before {
+            background-position: -34px 0;
+        }
+
+        &.service-serious::before {
+            background-position: -82px 0;
+            width: 47px;
+        }
+
+        &.service-frame::before {
+            background-position: -129px 0;
+        }
+    }
+}
+
+#portfolio {
+    background: #fff;
+
+    .section-title {
+        float: left;
+        color: $primary-color;
+    }
+
+    .section-title::after {
+        background-color: $primary-color;
+    }
+
+    .portfolio-navigation {
+        float: right;
+
+        .nav-item {
+
+            &:first-child {
+                margin-left: auto;
+            }
+
+            a {
+                font-size: em(14);
+                color: $primary-color;
+            }
+
+            &:hover a, &.current a {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .portfolio-list {
+        &:after {
+            content: '';
+            @include clearfix();
+        }
+
+        .portfolio-item {
+            float: left;
+            width: percentage(270/$page-width);
+            height: 270px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+
+            a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    content: "+";
+                    font-family: "SegoeUI-Light", serif;
+                    font-size: em(72);
+                    text-align: center;
+                    line-height: 0;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding-top: 135px;
+                    background: rgba($footer-bg-color, 0.9);
+                    transform: translateX(100%);
+                    transition: transform 0.3s;
+                }
+
+                &:hover::before {
+                    transform: translateX(0);
+                }
+            }
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+            }
+
+            &:nth-child(4n) {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+#twitter {
+    background-color: $secondary-color;
+
+    .twitter-icon {
+        width: 28px;
+        height: 22px;
+        float: right;
+    }
+
+    .section-content {
+        font-family: "SegoeUI-Light", serif;
+        font-size: em(28);
+        line-height: em(28);
+
+        strong {
+            font-family: "SegoeUI-SemiBold", serif;
+        }
+    }
+}
+
+#whoami {
+    background: transparent;
+    position: relative;
+
+    .section-content {
+        p {
+            display: inline-block;
+            width: percentage(570/$page-width);
+
+            &:nth-child(2n) {
+                margin-left: 26px;
+            }
+        }
+
+        .button-social {
+            margin-right: 16px;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $footer-bg-color url("https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/images/whoami.jpg") center center no-repeat;
+        background-blend-mode: luminosity;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+    }
+}
+
+#testimonials {
+    background-color: #fff;
+
+    .wrapper {
+        position: relative;
+
+        &::before {
+            content: "\201D";
+            font-family: 'Bitter', serif;
+            font-size: em(72);
+            color: $primary-color;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    .section-title,
+    .section-content {
+        color: $primary-color;
+    }
+
+    .section-title::after {
+        background-color: $primary-color;
+    }
+
+    .section-content {
+        font-family: "SegoeUI-Light", serif;
+
+        .quote-body {
+            font-size: em(28);
+            line-height: em(28);
+            margin-bottom: 30px;
+        }
+
+        .quote-by {
+            font-family: "SegoeUI-Bold", serif;
+            color: $secondary-color;
+            font-size: em(14);
+
+            &::before {
+                content: "- ";
+            }
+        }
+    }
+}
+
+#contact {
+    background: transparent;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $footer-bg-color url("https://bytebucket.org/nabeelmolham/mf-web-dev-2/raw/cad6433b1c7f7251467711385dd207a6c6e9257c/test-task-22-08-2015/assets/images/contact-bg.jpg") center center no-repeat;
+        background-blend-mode: luminosity;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+    }
+}
+
+/**
+* Footer
+**/
+
+@mixin footer-font-style() {
+    font-family: "SegoeUI-SemiBold", serif;
+    font-size: em(12);
+    color: $primary-color;
+}
+
+.page-footer {
+    height: 170px;
+    padding-top: 80px;
+    background: $footer-bg-color;
+
+    .copyrights {
+        float: right;
+        @include footer-font-style();
+    }
+}
+
+.footer-navigation {
+    float: left;
+
+    .nav-item {
+        margin-left: 0;
+
+        a {
+            @include footer-font-style();
+            display: inline-block;
+            padding: 0;
+            transition: none !important;
+
+            &::after {
+                content: "|";
+                display: inline-block;
+                vertical-align: 18%;
+                position: static;
+                top: auto;
+                left: auto;
+                width: auto;
+                border: none;
+                padding: 0 15px;
+                transition: none !important;
+                opacity: 1;
+            }
+        }
+
+        &:last-child a::after {
+            content: "";
+            width: 0;
+            padding: 0;
+        }
+
+        &:hover a, &.current a {
+            color: $secondary-color;
+            
+            &::after {
+                color: $primary-color;
+            }
+        }
+    }
+}
+</style>
